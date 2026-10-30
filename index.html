@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>腾讯 AI 发展历程 · 从社交场景到通用智能</title>
+<meta name="description" content="一份关于腾讯人工智能发展历程的梳理：从 2012 年优图实验室，到 AI Lab、AI in All、混元大模型与智能体时代。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230052d9'/%3E%3Ctext x='16' y='22' font-size='16' font-family='serif' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/home.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">腾</span>
+      <span class="brand__text">
+        <b>腾讯 AI 档案</b>
+        <span>Tencent AI Timeline</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" aria-label="展开菜单" aria-expanded="false" data-nav-toggle>
+      <span></span>
+    </button>
+    <nav class="nav__links" data-nav-links>
+      <a class="nav__link is-active" href="index.html">首页</a>
+      <a class="nav__link" href="#timeline">发展历程</a>
+      <a class="nav__link" href="#map">技术地图</a>
+      <a class="nav__link" href="games.html">游戏中心</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <span class="hero__badge">
+        <i class="dot"></i> 1998 — 2026 · 深圳 · 持续更新
+      </span>
+
+      <h1 class="hero__title">
+        腾讯的 AI，<br />
+        <span class="hero__title-em">是在产品里长大的</span>
+      </h1>
+
+      <p class="hero__lede">
+        它没有从一篇论文开始，而是从一条消息、一张图片、一次支付里长出来。
+        二十多年间，腾讯把 AI 拆成四层：实验室里的基础研究、产品里的场景打磨、
+        云上的能力开放，以及一个大模型底座。
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#timeline">
+          浏览发展历程
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="games.html">
+          去玩数独
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+        </a>
+      </div>
+
+      <dl class="hero__stats">
+        <div class="hero__stat">
+          <dt>起点</dt>
+          <dd><b>2012</b><span>优图实验室成立</span></dd>
+        </div>
+        <div class="hero__stat">
+          <dt>研究机构</dt>
+          <dd><b>4</b><span>优图 / AI Lab / 微信 AI / Robotics X</span></dd>
+        </div>
+        <div class="hero__stat">
+          <dt>内部落地</dt>
+          <dd><b>900+</b><span>款产品接入混元能力</span></dd>
+        </div>
+        <div class="hero__stat">
+          <dt>基座规模</dt>
+          <dd><b>千亿级</b><span>参数的大模型体系</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= 四个阶段概览 ================= -->
+  <section class="section section--tight" id="eras">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Four Phases</span>
+        <h2>四个阶段，一条主线</h2>
+        <p>先有场景，再有技术；技术成熟后反过来重构场景。腾讯的 AI 大体沿着这条路径走了十四年。</p>
+      </div>
+
+      <div class="era-cards">
+        <a class="era-card reveal" href="#era-1">
+          <span class="era-card__no">01</span>
+          <span class="era-card__years">2012 — 2016</span>
+          <h3>筑基：把实验室建起来</h3>
+          <p>优图、微信 AI、AI Lab 相继成立，计算机视觉、语音、NLP、机器学习四条线同时铺开。</p>
+          <span class="era-card__link">查看阶段 →</span>
+        </a>
+        <a class="era-card reveal" href="#era-2">
+          <span class="era-card__no">02</span>
+          <span class="era-card__years">2017 — 2022</span>
+          <h3>落地：AI in All</h3>
+          <p>从"技术可用"转向"产业可用"，医疗、客服、内容审核、工业质检成为第一批真实战场。</p>
+          <span class="era-card__link">查看阶段 →</span>
+        </a>
+        <a class="era-card reveal" href="#era-3">
+          <span class="era-card__no">03</span>
+          <span class="era-card__years">2023 — 2024</span>
+          <h3>大模型：混元登场</h3>
+          <p>千亿参数基座发布，C 端元宝上线，文生图、视频、3D 相继开源，多模态能力补齐。</p>
+          <span class="era-card__link">查看阶段 →</span>
+        </a>
+        <a class="era-card reveal" href="#era-4">
+          <span class="era-card__no">04</span>
+          <span class="era-card__years">2025 — 2026</span>
+          <h3>智能体：全栈押注</h3>
+          <p>模型、算力、数据、分发四条腿一起走，AI 从"功能"变成产品的默认入口。</p>
+          <span class="era-card__link">查看阶段 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 时间轴 ================= -->
+  <section class="section timeline-section" id="timeline">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Timeline</span>
+        <h2>关键节点</h2>
+        <p>按时间顺序整理的重要事件，标注了年份、动作与它为什么重要。</p>
+      </div>
+
+      <!-- 阶段 1 -->
+      <article class="era" id="era-1">
+        <header class="era__head reveal">
+          <span class="era__no">01</span>
+          <div>
+            <h3>筑基：把实验室建起来</h3>
+            <p>社交产品每天产生海量图片、语音和文本，这是腾讯做 AI 最早的"数据土壤"。</p>
+          </div>
+          <span class="era__years">2012 — 2016</span>
+        </header>
+
+        <ol class="tl">
+          <li class="tl__item reveal">
+            <div class="tl__year">2012</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>优图实验室成立</h4>
+              <p>最初隶属社交网络事业群（SNG），主攻计算机视觉：人脸识别、OCR、图像理解与内容审核，为 QQ、QQ 空间、微信提供视觉能力底座。</p>
+              <div class="tl__tags"><span>计算机视觉</span><span>人脸识别</span><span>OCR</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2015</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>微信 AI 实验室成立</h4>
+              <p>隶属微信事业群（WXG），聚焦语音识别、自然语言处理与图像视频理解，让智能交互直接发生在聊天窗口里。</p>
+              <div class="tl__tags"><span>语音</span><span>NLP</span><span>微信生态</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2016.04</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>腾讯 AI Lab 成立</h4>
+              <p>隶属技术工程事业群（TEG），确定机器学习、计算机视觉、语音识别、自然语言处理四大方向，确立"基础研究 + 场景应用"双轮驱动。</p>
+              <div class="tl__tags"><span>基础研究</span><span>四大方向</span></div>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- 阶段 2 -->
+      <article class="era" id="era-2">
+        <header class="era__head reveal">
+          <span class="era__no">02</span>
+          <div>
+            <h3>落地：AI in All</h3>
+            <p>技术走出实验室，第一次被放进行业里检验：能不能真的省钱、提效、救人。</p>
+          </div>
+          <span class="era__years">2017 — 2022</span>
+        </header>
+
+        <ol class="tl">
+          <li class="tl__item reveal">
+            <div class="tl__year">2017.03</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>提出「AI in All」</h4>
+              <p>在"两会"与后续公开发布中提出 Make AI Everywhere，明确"基础研究 — 场景共建 — AI 开放"三层结构，AI 从部门课题升级为公司战略。</p>
+              <div class="tl__tags"><span>公司战略</span><span>能力开放</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2017.08</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>腾讯觅影发布</h4>
+              <p>首个将 AI 影像分析用于临床辅助诊断的产品方向，食管癌、肺结节、糖网等早筛场景陆续落地，AI 第一次进入医院。</p>
+              <div class="tl__tags"><span>医疗 AI</span><span>影像分析</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2018.09</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>「930 变革」与 CSIG 成立</h4>
+              <p>新成立云与智慧产业事业群，AI 能力通过云与产业互联网对外输出，"技术—产品—行业"的链路被彻底打通。</p>
+              <div class="tl__tags"><span>产业互联网</span><span>组织架构</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2018</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>Robotics X 实验室成立</h4>
+              <p>布局机器人研究与具身智能，形成"优图 + AI Lab + 微信 AI + Robotics X"的四大研究机构格局。</p>
+              <div class="tl__tags"><span>具身智能</span><span>机器人</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2019 — 2022</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>能力开放与规模化</h4>
+              <p>视觉、语音、NLP 能力对外开放上百项，智能客服、内容审核、影像辅助诊断进入规模化商用；游戏 AI「绝悟」在《王者荣耀》达到职业级对抗水平。</p>
+              <div class="tl__tags"><span>开放平台</span><span>游戏 AI</span><span>规模落地</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2021 — 2022</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>大模型开始蓄势</h4>
+              <p>内部投入千亿参数级 NLP 大模型研发，2022 年对外披露混元系列进展，为下一阶段的正面竞争准备底座。</p>
+              <div class="tl__tags"><span>预研</span><span>混元前身</span></div>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- 阶段 3 -->
+      <article class="era" id="era-3">
+        <header class="era__head reveal">
+          <span class="era__no">03</span>
+          <div>
+            <h3>大模型：混元登场</h3>
+            <p>从"有 AI 能力"到"有一个自己的基座模型"，腾讯补齐了最关键的一块拼图。</p>
+          </div>
+          <span class="era__years">2023 — 2024</span>
+        </header>
+
+        <ol class="tl">
+          <li class="tl__item reveal">
+            <div class="tl__year">2023.09</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元大模型正式发布</h4>
+              <p>千亿参数规模，支持中文创作、逻辑推理、代码与多轮对话，通过腾讯云对外开放，并成为首批通过生成式人工智能服务备案的模型之一。</p>
+              <div class="tl__tags"><span>混元</span><span>千亿参数</span><span>云上开放</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2024.05</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>元宝 App 上线 &amp; 文生图开源</h4>
+              <p>C 端 AI 助手「腾讯元宝」发布，打通微信、腾讯会议、腾讯文档等场景；同期开源混元文生图模型，采用中文原生的 DiT 架构。</p>
+              <div class="tl__tags"><span>C 端产品</span><span>开源</span><span>文生图</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2024.09</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元 Turbo</h4>
+              <p>采用 MoE 混合专家架构，在保持效果的同时大幅压低推理成本与延迟，让大模型具备大规模商用的经济性。</p>
+              <div class="tl__tags"><span>MoE</span><span>降本</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2024.11</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元 Large 开源</h4>
+              <p>发布并开源总参数 389B 的 MoE 大模型，支持 256K 长上下文，是国内少数开源的超大规模基座之一。</p>
+              <div class="tl__tags"><span>389B</span><span>长上下文</span><span>开源</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2024.12</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>视频生成模型开源</h4>
+              <p>混元视频生成大模型对外开源，130 亿参数，支持高动态、大运镜的镜头语言，多模态版图从图像延伸到视频。</p>
+              <div class="tl__tags"><span>文生视频</span><span>开源</span></div>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- 阶段 4 -->
+      <article class="era" id="era-4">
+        <header class="era__head reveal">
+          <span class="era__no">04</span>
+          <div>
+            <h3>智能体：全栈押注</h3>
+            <p>竞争从"模型分数"转到"任务完成率"，考验的是算力、数据、工程和分发入口的组合能力。</p>
+          </div>
+          <span class="era__years">2025 — 2026</span>
+        </header>
+
+        <ol class="tl">
+          <li class="tl__item reveal">
+            <div class="tl__year">2025.02</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>「双模调用」：混元 + DeepSeek</h4>
+              <p>元宝、ima、微信搜一搜等产品同时接入混元与 DeepSeek，用外部模型保证体验、用自研模型保留长期空间，是一次相当务实的取舍。</p>
+              <div class="tl__tags"><span>多模型</span><span>产品策略</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2025.03</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元 T1 深度思考模型</h4>
+              <p>面向长文推理与复杂任务的慢思考模型，与快速回答模型形成"快慢双档"，覆盖不同成本与精度需求。</p>
+              <div class="tl__tags"><span>推理模型</span><span>长文本</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2025.09</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元 3D 生成模型迭代</h4>
+              <p>3D 生成能力进入工业级精度，从"能生成"走向"能直接用"，服务游戏、影视与电商的内容生产管线。</p>
+              <div class="tl__tags"><span>3D 生成</span><span>内容生产</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2025 下半年</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>组织升级：算力、数据、模型并线</h4>
+              <p>围绕 AI 基础设施调整组织，把算力、数据平台与大模型研发放到同一套体系里，同时引进外部顶尖研究者——这是"补短板"而非"秀肌肉"的动作。</p>
+              <div class="tl__tags"><span>AI Infra</span><span>组织</span><span>人才</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2026.04</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>混元 Hy3 系列发布并开源</h4>
+              <p>新一代模型系列强调"够用、便宜"与真实任务完成率，在第三方调用平台上获得可观的调用量，路线从"冲榜"转向"能干活"。</p>
+              <div class="tl__tags"><span>Hy3</span><span>开源</span><span>智能体</span></div>
+            </div>
+          </li>
+          <li class="tl__item reveal">
+            <div class="tl__year">2026.07</div>
+            <div class="tl__dot" aria-hidden="true"></div>
+            <div class="tl__body">
+              <h4>Hy3 正式版 &amp; 微信内测 AI 助手</h4>
+              <p>模型正式版上线并接入元宝、CodeBuddy、QQ、腾讯文档等核心产品；AI 助手以轻量形态进入微信聊天界面，14 亿月活的入口开始承接智能体。</p>
+              <div class="tl__tags"><span>产品矩阵</span><span>超级入口</span></div>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <p class="timeline-note reveal">
+        说明：本页为公开资料的学习整理，2026 年的进展仍在快速变化，具体时间与数据请以官方发布为准。
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 技术地图 ================= -->
+  <section class="section map-section" id="map">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Tech Map</span>
+        <h2>六块拼图</h2>
+        <p>把新闻标题去掉，腾讯 AI 实际由六个能力层构成，彼此咬合。</p>
+      </div>
+
+      <div class="map-grid">
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 20 7v10l-8 4.2L4 17V7z"/><path d="M4 7l8 4.2L20 7M12 11.2V21"/></svg>
+          </div>
+          <h3>基座模型</h3>
+          <p>混元系列覆盖稠密与 MoE 架构，从千亿参数到轻量版本，构成产品与云服务的统一底座。</p>
+          <span class="map-card__tag">Hunyuan</span>
+        </article>
+
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M3.5 17.5 9 12.5l3.4 3.2L15.5 13l5 4.5"/></svg>
+          </div>
+          <h3>多模态生成</h3>
+          <p>文生图、图生图、文生视频、3D 生成，全部采用自研架构并陆续开源，形成内容生产工具链。</p>
+          <span class="map-card__tag">Image · Video · 3D</span>
+        </article>
+
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2.5l1.8-5 2.4 10 2-7 1.8 4H21"/></svg>
+          </div>
+          <h3>语音与听觉</h3>
+          <p>语音识别、合成与降噪，支撑微信语音转文字、会议实时字幕、智能客服等高频场景。</p>
+          <span class="map-card__tag">ASR · TTS</span>
+        </article>
+
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4.5M9 4.5h6"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/></svg>
+          </div>
+          <h3>具身智能</h3>
+          <p>Robotics X 研究双足、轮足与灵巧操作，把感知与决策从屏幕里搬到物理世界。</p>
+          <span class="map-card__tag">Robotics</span>
+        </article>
+
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12.5c0 4.2-3.8 7.3-8.5 7.3-1 0-2-.15-2.9-.42L4.5 21l1.3-3.7A7 7 0 0 1 3.5 12.5C3.5 8.3 7.3 5 12 5s8.5 3.3 8.5 7.5Z"/><path d="M8.5 12h7M12 8.5v7"/></svg>
+          </div>
+          <h3>医疗与生命科学</h3>
+          <p>从觅影的影像早筛，到蛋白质结构预测与药物发现，AI 在容错率最低的行业里打磨精度。</p>
+          <span class="map-card__tag">AI for Science</span>
+        </article>
+
+        <article class="map-card reveal">
+          <div class="map-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l1.8 4.6 4.6 1.8-4.6 1.8L12 16l-1.8-4.6L5.6 9.6l4.6-1.8z"/><path d="M18 15.5l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9z"/></svg>
+          </div>
+          <h3>智能体与工具</h3>
+          <p>把模型接到搜索、文档、代码、日程等真实工具上，衡量标准从"答得好"变成"事情办成了"。</p>
+          <span class="map-card__tag">Agent</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 三条主线 ================= -->
+  <section class="section lines-section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Three Threads</span>
+        <h2>回头看，能看出三条线索</h2>
+      </div>
+      <div class="lines">
+        <div class="line-item reveal">
+          <span class="line-item__no">01</span>
+          <h3>场景先于技术</h3>
+          <p>优图之所以做人脸识别，是因为 QQ 空间每天要处理海量照片；微信 AI 之所以做语音，是因为十亿人正在发语音消息。需求先出现，研究再跟上。</p>
+        </div>
+        <div class="line-item reveal">
+          <span class="line-item__no">02</span>
+          <h3>开源换生态</h3>
+          <p>文生图、混元 Large、视频生成、Hy3 相继开源。对一家以产品见长的公司来说，开源不是姿态，而是用模型换取开发者与行业标准的话语权。</p>
+        </div>
+        <div class="line-item reveal">
+          <span class="line-item__no">03</span>
+          <h3>入口决定胜负</h3>
+          <p>模型能力可以被追平，十四亿月活的聊天入口不能。腾讯真正的底牌从来不是榜单分数，而是 AI 最终能以多自然的方式出现在对话里。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 游戏 CTA ================= -->
+  <section class="section cta-section">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div class="cta__text">
+          <span class="eyebrow">Playground</span>
+          <h2>看累了？来一局数独</h2>
+          <p>游戏中心是本站的独立模块，目前上线经典 9×9 数独：四档难度、笔记模式、计时与提示。之后会有更多小游戏陆续接入。</p>
+          <div class="cta__actions">
+            <a class="btn btn--primary" href="games.html">进入游戏中心</a>
+            <a class="btn btn--ghost" href="games/sudoku/index.html">直接开一局</a>
+          </div>
+        </div>
+        <div class="cta__art" aria-hidden="true">
+          <div class="mini-grid">
+            <span></span><span>5</span><span></span><span>3</span><span></span><span></span><span></span><span></span><span>9</span>
+            <span></span><span></span><span></span><span></span><span>7</span><span></span><span></span><span></span><span></span>
+            <span>9</span><span></span><span></span><span></span><span></span><span>8</span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span>6</span><span></span><span></span><span></span><span></span><span>4</span>
+            <span></span><span>8</span><span></span><span></span><span></span><span></span><span></span><span>7</span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span>7</span><span></span><span></span><span></span><span>2</span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span>4</span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="index.html" style="margin-bottom:10px">
+        <span class="brand__mark">腾</span>
+        <span class="brand__text"><b>腾讯 AI 档案</b><span>Tencent AI Timeline</span></span>
+      </a>
+      <p>一个静态的、可自由扩展的小站：一个关于腾讯 AI 发展历程的主页，加一个可以不断加入新游戏的游戏中心。</p>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">首页</a>
+      <a href="#timeline">发展历程</a>
+      <a href="#map">技术地图</a>
+      <a href="games.html">游戏中心</a>
+    </div>
+    <div class="footer__meta">
+      <span>内容为公开资料整理，仅供学习参考，与腾讯公司无关。</span>
+      <span>© <span data-year>2026</span> · 纯静态站点</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

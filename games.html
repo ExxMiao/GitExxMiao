@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>游戏中心 · 腾讯 AI 档案</title>
+<meta name="description" content="站点的小游戏合集：目前上线经典 9×9 数独，采用模块化结构，可持续接入更多小游戏。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230052d9'/%3E%3Ctext x='16' y='22' font-size='16' font-family='serif' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/games.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">腾</span>
+      <span class="brand__text">
+        <b>腾讯 AI 档案</b>
+        <span>Tencent AI Timeline</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" aria-label="展开菜单" aria-expanded="false" data-nav-toggle>
+      <span></span>
+    </button>
+    <nav class="nav__links" data-nav-links>
+      <a class="nav__link" href="index.html">首页</a>
+      <a class="nav__link" href="index.html#timeline">发展历程</a>
+      <a class="nav__link" href="index.html#map">技术地图</a>
+      <a class="nav__link is-active" href="games.html">游戏中心</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="games-hero">
+    <div class="games-hero__grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="hero__badge"><i class="dot"></i> 模块化游戏中心 · 持续扩展</span>
+      <h1>游戏中心</h1>
+      <p>
+        每个小游戏都是一个独立模块：自己的页面、样式与逻辑，互不干扰。
+        游戏中心只负责读取注册表、渲染入口卡片。
+      </p>
+      <div class="games-hero__meta">
+        <span>已上线 <b id="game-count">1</b> 款</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>全部纯前端 · 无需登录</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>支持键盘与触屏</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="games-list-head">
+        <h2>全部游戏</h2>
+        <div class="tag-filter" id="tag-filter" aria-label="按标签筛选"></div>
+      </div>
+
+      <div class="game-grid" id="game-grid">
+        <noscript>
+          <p style="grid-column:1/-1;color:#7b8a9e">
+            游戏卡片由脚本渲染，请开启 JavaScript；或
+            <a href="games/sudoku/index.html">直接进入数独</a>。
+          </p>
+        </noscript>
+      </div>
+
+      <details class="dev-note">
+        <summary>开发者：如何接入一个新游戏</summary>
+        <ol>
+          <li>在 <code>games/</code> 下新建文件夹，例如 <code>games/2048/</code>，放入 <code>index.html</code>、<code>game.css</code>、<code>game.js</code>，页面直接引用 <code>../../assets/css/base.css</code> 即可继承全站风格。</li>
+          <li>打开 <code>assets/js/games-registry.js</code>，在 <code>window.GAME_REGISTRY</code> 数组里追加一条配置（id / name / path / tags / icon 等）。</li>
+          <li>刷新本页，新游戏会自动出现在卡片列表里；无需修改本页任何代码。</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="index.html" style="margin-bottom:10px">
+        <span class="brand__mark">腾</span>
+        <span class="brand__text"><b>腾讯 AI 档案</b><span>Tencent AI Timeline</span></span>
+      </a>
+      <p>一个静态的、可自由扩展的小站：一个关于腾讯 AI 发展历程的主页，加一个可以不断加入新游戏的游戏中心。</p>
+    </div>
+    <div class="footer__links">
+      <a href="index.html">首页</a>
+      <a href="index.html#timeline">发展历程</a>
+      <a href="index.html#map">技术地图</a>
+      <a href="games.html">游戏中心</a>
+    </div>
+    <div class="footer__meta">
+      <span>内容为公开资料整理，仅供学习参考，与腾讯公司无关。</span>
+      <span>© <span data-year>2026</span> · 纯静态站点</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/games-registry.js"></script>
+<script src="assets/js/games-hub.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
