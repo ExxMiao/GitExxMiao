@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>扫雷 · 腾讯 AI 档案</title>
+<meta name="description" content="经典扫雷游戏，初级 9×9 / 中级 16×16 / 高级 30×16 三档难度，首次点击必安全，支持插旗、双击快开与计时排行。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230052d9'/%3E%3Ctext x='16' y='22' font-size='16' font-family='serif' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="../../assets/css/base.css" />
+<link rel="stylesheet" href="minesweeper.css" />
+</head>
+<body class="ms-body">
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../../index.html">
+      <span class="brand__mark">腾</span>
+      <span class="brand__text">
+        <b>腾讯 AI 档案</b>
+        <span>Tencent AI Timeline</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" aria-label="展开菜单" aria-expanded="false" data-nav-toggle>
+      <span></span>
+    </button>
+    <nav class="nav__links" data-nav-links>
+      <a class="nav__link" href="../../index.html">首页</a>
+      <a class="nav__link" href="../../index.html#timeline">发展历程</a>
+      <a class="nav__link" href="../../index.html#map">技术地图</a>
+      <a class="nav__link is-active" href="../../games.html">游戏中心</a>
+    </nav>
+  </div>
+</header>
+
+<main class="ms">
+  <div class="wrap">
+
+    <div class="ms-head">
+      <div class="ms-head__left">
+        <a class="ms-back" href="../../games.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>
+          游戏中心
+        </a>
+        <h1>扫雷 <span>Minesweeper</span></h1>
+      </div>
+
+      <div class="ms-stats">
+        <div class="ms-stat">
+          <span>剩余雷数</span>
+          <b data-stat="mines">10</b>
+        </div>
+        <div class="ms-stat">
+          <span>时间</span>
+          <b data-stat="time">00:00</b>
+        </div>
+        <div class="ms-stat">
+          <span>最佳</span>
+          <b data-stat="best">--:--</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="ms-layout">
+
+      <div class="ms-main">
+        <div class="ms-board-scroll">
+          <div class="board" id="board" role="grid" aria-label="扫雷棋盘" tabindex="0"></div>
+        </div>
+        <p class="ms-keys">
+          <span>操作</span> 左键翻开 · 右键 / 长按插旗 · 点击已翻开的数字快速翻开周围 · 方向键 + <kbd>Enter</kbd> 翻开 · <kbd>F</kbd> 插旗
+        </p>
+      </div>
+
+      <aside class="panel">
+
+        <div class="panel__sec">
+          <div class="panel__row">
+            <span class="panel__label">难度</span>
+            <span class="panel__hintline" data-diff-size>9 × 9 · 10 雷</span>
+          </div>
+          <div class="seg" data-difficulty-group>
+            <button type="button" data-difficulty="beginner" class="is-active">初级</button>
+            <button type="button" data-difficulty="intermediate">中级</button>
+            <button type="button" data-difficulty="expert">高级</button>
+          </div>
+        </div>
+
+        <div class="panel__sec panel__sec--tools">
+          <button class="tool" type="button" data-act="flagmode" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4"/><path d="M6 4h11l-2.5 3.5L17 11H6"/></svg>
+            <span>旗子模式</span>
+            <em data-flagmode-state>关</em>
+          </button>
+          <button class="tool" type="button" data-act="pause">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1.2"/><rect x="13.6" y="5" width="3.4" height="14" rx="1.2"/></svg>
+            <span>暂停</span>
+          </button>
+          <button class="tool" type="button" data-act="new">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"/><path d="M20 5v6h-6"/></svg>
+            <span>重开</span>
+          </button>
+          <button class="tool" type="button" data-act="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10h12V10"/></svg>
+            <span>游戏中心</span>
+          </button>
+        </div>
+
+        <div class="panel__sec">
+          <span class="panel__label">规则速览</span>
+          <ul class="ms-rules">
+            <li>数字表示它周围 8 格里地雷的数量。</li>
+            <li>第一次点击必定安全，放心大胆点。</li>
+            <li>翻开的数字周围旗子数够时，再点它可以一次翻开周围所有格子。</li>
+            <li>翻开所有非雷格子即获胜。</li>
+          </ul>
+        </div>
+
+        <div class="panel__actions">
+          <button class="btn btn--primary" type="button" data-act="new">新开一局</button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- 结算弹层 -->
+  <div class="overlay" data-overlay hidden>
+    <div class="overlay__card" role="dialog" aria-modal="true" aria-labelledby="ms-result-title">
+      <div class="overlay__mark" data-result-mark>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4.5 4.5L19 7"/></svg>
+      </div>
+      <h2 id="ms-result-title" data-result-title>胜利！</h2>
+      <p class="overlay__sub">
+        难度 <b data-result-diff>初级</b> · 用时 <b data-result-time>00:00</b>
+      </p>
+      <p class="overlay__record" data-result-record hidden>🎉 新的最佳记录</p>
+      <div class="overlay__actions">
+        <button class="btn btn--primary" type="button" data-act="new">再来一局</button>
+        <a class="btn btn--ghost" href="../../games.html">返回游戏中心</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 暂停层 -->
+  <div class="pause-layer" data-pause-layer hidden>
+    <div class="pause-layer__inner">
+      <div class="pause-layer__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"/></svg>
+      </div>
+      <p>已暂停</p>
+      <button class="btn btn--primary" type="button" data-act="pause">继续游戏</button>
+    </div>
+  </div>
+</main>
+
+<script src="../../assets/js/site.js"></script>
+<script src="minesweeper.js"></script>
+</body>
+</html>

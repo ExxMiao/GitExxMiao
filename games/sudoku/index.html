@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>数独 9×9 · 腾讯 AI 档案</title>
+<meta name="description" content="经典 9×9 数独游戏，四档难度，支持笔记模式、撤销、提示与自动校验，题目随机生成且保证唯一解。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230052d9'/%3E%3Ctext x='16' y='22' font-size='16' font-family='serif' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="../../assets/css/base.css" />
+<link rel="stylesheet" href="sudoku.css" />
+</head>
+<body class="sudoku-body">
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../../index.html">
+      <span class="brand__mark">腾</span>
+      <span class="brand__text">
+        <b>腾讯 AI 档案</b>
+        <span>Tencent AI Timeline</span>
+      </span>
+    </a>
+    <button class="nav__toggle" type="button" aria-label="展开菜单" aria-expanded="false" data-nav-toggle>
+      <span></span>
+    </button>
+    <nav class="nav__links" data-nav-links>
+      <a class="nav__link" href="../../index.html">首页</a>
+      <a class="nav__link" href="../../index.html#timeline">发展历程</a>
+      <a class="nav__link" href="../../index.html#map">技术地图</a>
+      <a class="nav__link is-active" href="../../games.html">游戏中心</a>
+    </nav>
+  </div>
+</header>
+
+<main class="sz">
+  <div class="wrap">
+
+    <div class="sz-head">
+      <div class="sz-head__left">
+        <a class="sz-back" href="../../games.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H6M11 6l-6 6 6 6"/></svg>
+          游戏中心
+        </a>
+        <h1>数独 <span>9 × 9</span></h1>
+      </div>
+
+      <div class="sz-stats">
+        <div class="sz-stat">
+          <span>时间</span>
+          <b data-stat="time">00:00</b>
+        </div>
+        <div class="sz-stat">
+          <span>错误</span>
+          <b data-stat="mistakes">0</b>
+        </div>
+        <div class="sz-stat">
+          <span>提示</span>
+          <b data-stat="hints">0</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="sz-layout">
+
+      <div class="sz-main">
+        <div class="board" id="board" role="grid" aria-label="9 乘 9 数独棋盘" tabindex="0"></div>
+        <p class="sz-keys">
+          <span>快捷键</span> 1–9 填数 · 方向键移动 · <kbd>N</kbd> 笔记 · <kbd>H</kbd> 提示 · <kbd>U</kbd> 撤销 · <kbd>P</kbd> 暂停
+        </p>
+      </div>
+
+      <aside class="panel">
+
+        <div class="panel__sec">
+          <div class="panel__row">
+            <span class="panel__label">难度</span>
+            <span class="panel__best" data-best>最佳 --:--</span>
+          </div>
+          <div class="seg" data-difficulty-group>
+            <button type="button" data-difficulty="easy">简单</button>
+            <button type="button" data-difficulty="medium" class="is-active">中等</button>
+            <button type="button" data-difficulty="hard">困难</button>
+            <button type="button" data-difficulty="expert">专家</button>
+          </div>
+        </div>
+
+        <div class="panel__sec">
+          <div class="panel__row">
+            <span class="panel__label">数字</span>
+            <span class="panel__hintline">点击填入所选格</span>
+          </div>
+          <div class="pad" data-pad></div>
+        </div>
+
+        <div class="panel__sec panel__sec--tools">
+          <button class="tool" type="button" data-act="notes" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M14.5 5.5 18.5 9.5 10 18H6v-4z"/></svg>
+            <span>笔记</span>
+            <em data-notes-state>关</em>
+          </button>
+          <button class="tool" type="button" data-act="undo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h9a5 5 0 0 1 0 10h-3"/><path d="M4 9l4-4M4 9l4 4"/></svg>
+            <span>撤销</span>
+          </button>
+          <button class="tool" type="button" data-act="erase">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20h11"/><path d="M4.5 15.5 12 8l6 6-4 4.5H8z"/></svg>
+            <span>擦除</span>
+          </button>
+          <button class="tool" type="button" data-act="hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.4.3.5.7.5 1.1h6c0-.4.1-.8.5-1.1A6 6 0 0 0 12 3Z"/></svg>
+            <span>提示</span>
+          </button>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" data-autocheck checked />
+          <span class="switch__track"><i></i></span>
+          <span class="switch__text">自动校验错误</span>
+        </label>
+
+        <div class="panel__actions">
+          <button class="btn btn--primary" type="button" data-act="new">新开一局</button>
+          <button class="btn btn--ghost" type="button" data-act="pause" data-pause-label>暂停</button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- 完成弹层 -->
+  <div class="overlay" data-overlay hidden>
+    <div class="overlay__card" role="dialog" aria-modal="true" aria-labelledby="win-title">
+      <div class="overlay__mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4.5 4.5L19 7"/></svg>
+      </div>
+      <h2 id="win-title">完成！</h2>
+      <p class="overlay__sub">
+        难度 <b data-win-diff>中等</b> · 用时 <b data-win-time>00:00</b> · 错误 <b data-win-mistakes>0</b> · 提示 <b data-win-hints>0</b>
+      </p>
+      <p class="overlay__record" data-win-record hidden>🎉 新的最佳记录</p>
+      <div class="overlay__actions">
+        <button class="btn btn--primary" type="button" data-act="new">再来一局</button>
+        <a class="btn btn--ghost" href="../../games.html">返回游戏中心</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 暂停层 -->
+  <div class="pause-layer" data-pause-layer hidden>
+    <div class="pause-layer__inner">
+      <div class="pause-layer__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"/></svg>
+      </div>
+      <p>已暂停</p>
+      <button class="btn btn--primary" type="button" data-act="pause">继续游戏</button>
+    </div>
+  </div>
+</main>
+
+<script src="../../assets/js/site.js"></script>
+<script src="sudoku.js"></script>
+</body>
+</html>
